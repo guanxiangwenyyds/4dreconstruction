@@ -1,0 +1,6 @@
+# ninja log v5
+0	1785	1720386637262796008	/home/wsl/4DGaussians/4DGaussians/submodules/depth-diff-gaussian-rasterization/build/temp.linux-x86_64-cpython-37/cuda_rasterizer/backward.o	9e6d8bac6aeafa16
+0	1785	1720386637262796008	/home/wsl/4DGaussians/4DGaussians/submodules/depth-diff-gaussian-rasterization/build/temp.linux-x86_64-cpython-37/cuda_rasterizer/forward.o	e4865b506c1fc84
+1	3899	1720386639372795119	/home/wsl/4DGaussians/4DGaussians/submodules/depth-diff-gaussian-rasterization/build/temp.linux-x86_64-cpython-37/cuda_rasterizer/rasterizer_impl.o	2f522e42b260a15f
+1	12184	1720386647652793369	/home/wsl/4DGaussians/4DGaussians/submodules/depth-diff-gaussian-rasterization/build/temp.linux-x86_64-cpython-37/ext.o	27e633ef968702e3
+1	29161	1720386664632795489	/home/wsl/4DGaussians/4DGaussians/submodules/depth-diff-gaussian-rasterization/build/temp.linux-x86_64-cpython-37/rasterize_points.o	3d366247a8565cb6
