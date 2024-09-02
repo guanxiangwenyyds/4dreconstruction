@@ -20,7 +20,7 @@ Currently, the project is only compatible with two datasets.
 
 One is the dataset used in [D-Nerf](https://github.com/albertpumarola/D-NeRF), which can be downloaded from [dropbox](https://www.dropbox.com/scl/fi/5oyd2uop62yw1ttlw1x5v/logs.zip?rlkey=5ko5sf3njkjv3vssonk1jmruy&e=1&dl=0).
 
-另The other is the [Dynamic 3D Gaussians](https://github.com/JonathonLuiten/Dynamic3DGaussians?tab=readme-ov-file) dataset used in [PanopticaSport](https://omnomnom.vision.rwth-aachen.de/data/Dynamic3DGaussians/data.zip)数据集.
+另The other is the [Dynamic 3D Gaussians](https://github.com/JonathonLuiten/Dynamic3DGaussians?tab=readme-ov-file) dataset used in [PanopticaSport](https://omnomnom.vision.rwth-aachen.de/data/Dynamic3DGaussians/data.zip).
 
 Cloning the code will provide a subset of each dataset mentioned above.
 
