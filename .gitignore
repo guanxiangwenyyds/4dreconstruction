@@ -1,13 +1,14 @@
 *.pyc
 .idea
-output
+data/boxes
+data/bouncingballs
+/output/*
+!/output/.gitignore
 build
 diff_rasterization/diff_rast.egg-info
 diff_rasterization/dist
 tensorboard_3d
 screenshots
-data
-submodules
 wandb
 x
 requirements.txt
