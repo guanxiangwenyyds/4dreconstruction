@@ -4,7 +4,7 @@ import os
 # 图片文件夹路径
 
 
-def animation_synthesis(image_folder, video_name):
+def animation_synthesis(image_folder, video_name, FPS=30):
 
     video_dir = os.path.join(image_folder, 'video')
     os.makedirs(video_dir, exist_ok=True)
@@ -18,7 +18,7 @@ def animation_synthesis(image_folder, video_name):
     height, width, layers = frame.shape
 
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    video = cv2.VideoWriter(video_path, fourcc, 30, (width, height))
+    video = cv2.VideoWriter(video_path, fourcc, FPS, (width, height))
 
     for image in images:
         video.write(cv2.imread(os.path.join(image_folder, image)))
