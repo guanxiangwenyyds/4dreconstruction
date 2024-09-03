@@ -100,7 +100,7 @@ class PanopticSportsDataset(Dataset):
 
     def readPanopticmeta(self, index, load_mask=None):
         '''
-        第 index 帧中的27个相机数据组成的一个字典
+        A dictionary of the 27 camera data in the index frame.
         '''
         w = self.meta['w']
         h = self.meta['h']
@@ -205,7 +205,7 @@ def PILtoTorch(pil_image, resolution):
 
 def storePly(path, xyz, rgb):
     """
-    点云的位置和颜色信息格式化并保存到一个PLY文件中
+    Point cloud position and colour information formatted and saved to a PLY file
 
     """
 
