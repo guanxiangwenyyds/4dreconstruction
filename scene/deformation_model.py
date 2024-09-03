@@ -2,9 +2,6 @@ import torch
 from torch import nn
 import pytorch_lightning as pl
 
-"""
-取消颜色，不透明度的学习
-"""
 class TimeAwareEncoder(nn.Module):
 
     def __init__(self, input_dim, depth, width):
