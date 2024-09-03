@@ -4,7 +4,7 @@ from scene.gaussian_model import GaussianModel
 from scene.pcd import fetchPly, BasicPointCloud, load_point_cloud_from_npz
 from scene.math_utils import o3d_knn
 from arguments import ModelParams, PipelineParams, PanopticParams
-from scene.dataset import Delta_v2
+from scene.data_management import Delta_v2
 from gaussian_renderer import render
 from loss import l1_loss, compute_psnr2, rigidity_loss, mse_loss
 

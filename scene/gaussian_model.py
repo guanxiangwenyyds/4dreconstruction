@@ -2,7 +2,7 @@ from plyfile import PlyData, PlyElement
 from scene.gaussian_utils import BasicPointCloud, RGB2SH, inverse_sigmoid, mkdir_p, build_rotation
 from scene.math_utils import build_scaling_rotation, strip_symmetric
 from scene.gaussian_utils import SH2RGB
-from scene.dataset import Delta
+from scene.data_management import Delta
 
 import os
 import torch

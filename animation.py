@@ -3,7 +3,7 @@ from scene.deformation_model import DeformationModel
 from arguments import ModelParams, PipelineParams, DnerfParams
 from gaussian_renderer import render
 from scene.DnerfDataset import Scene
-from scene.dataset import Delta_v2
+from scene.data_management import Delta_v2
 from animation_synthesis import animation_synthesis
 
 from tqdm import tqdm

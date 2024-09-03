@@ -4,7 +4,7 @@ from arguments import ModelParams, PipelineParams, DnerfParams
 from scene.DnerfDataset import Scene
 from gaussian_renderer import render
 from loss import l1_loss, compute_ssim, compute_psnr2
-from scene.dataset import Delta_v2
+from scene.data_management import Delta_v2
 
 import numpy as np
 import argparse

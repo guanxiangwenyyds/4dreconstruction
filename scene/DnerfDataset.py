@@ -1,6 +1,6 @@
 from scene.scene_read import searchForMaxIteration, add_points,readColmapSceneInfo, readPanopticSportsinfos, readHyperDataInfos
 from scene.gaussian_model import GaussianModel
-from scene.dataset import FourDGSdataset
+from scene.data_management import FourDGSdataset
 from scene.read_dnerf import readNerfSyntheticInfo
 from scene.read_multiviewer import readPanopticSportsinfos
 from arguments import ModelParams

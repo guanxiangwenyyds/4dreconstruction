@@ -4,7 +4,7 @@ from scene.gaussian_model import GaussianModel
 from arguments import ModelParams, PipelineParams, PanopticParams
 from gaussian_renderer import render
 from loss import l1_loss, compute_ssim, compute_psnr2
-from scene.dataset import Delta_v2
+from scene.data_management import Delta_v2
 from animation_synthesis import animation_synthesis
 
 import numpy as np

@@ -14,7 +14,7 @@ import math
 from diff_gaussian_rasterization import GaussianRasterizationSettings, GaussianRasterizer
 from scene.gaussian_model import GaussianModel
 from gaussian_renderer.gs_utils import eval_sh
-from scene.dataset import Delta_v2
+from scene.data_management import Delta_v2
 from time import time as get_time
 
 
