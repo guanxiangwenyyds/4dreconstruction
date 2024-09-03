@@ -83,7 +83,7 @@ def readPanopticmeta(datadir, json_path):
     # breakpoint()
     #for index in range(len(test_meta['fn'])):
 
-    # 实际上是遍历每一帧，对于每一帧图像，找到对应的27个相机的参数
+    # iterate each frame
     for index in range(1):
         focals = test_meta['k'][index]
         w2cs = test_meta['w2c'][index]
