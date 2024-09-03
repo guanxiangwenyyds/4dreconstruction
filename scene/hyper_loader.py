@@ -2,7 +2,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-from scene.geometry import focal2fov
+from scene.geometric import focal2fov
 from scene.pose_utils import smooth_camera_poses
 from scene.hyper_utils import Camera
 

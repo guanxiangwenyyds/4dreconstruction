@@ -2,7 +2,6 @@ from plyfile import PlyData, PlyElement
 from scene.gaussian_utils import BasicPointCloud, RGB2SH, inverse_sigmoid, mkdir_p, build_rotation
 from scene.math_utils import build_scaling_rotation, strip_symmetric
 from scene.gaussian_utils import SH2RGB
-from scene.data_management import Delta
 
 import os
 import torch
@@ -398,9 +397,6 @@ class GaussianModel(nn.Module):
         new_opacity_value = torch.full_like(self.opacity.data, 0.01)
         self.opacity = torch.nn.Parameter(new_opacity_value)
 
-    def pruning_points(self):
-        opacities = self.opacity.abs()
-        pass
 
 
 

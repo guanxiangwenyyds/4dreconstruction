@@ -64,7 +64,6 @@ def mkdir_p(folder_path):
             raise
 
 def build_rotation(r):
-    # 通过 旋转四元数 构建旋转矩阵R
     norm = torch.sqrt(r[:,0]*r[:,0] + r[:,1]*r[:,1] + r[:,2]*r[:,2] + r[:,3]*r[:,3])
 
     q = r / norm[:, None]

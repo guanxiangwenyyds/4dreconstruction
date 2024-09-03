@@ -10,18 +10,12 @@ def fov2focal(fov, pixels):
 
 def getNerfppNorm(cam_info):
     """
-    根据一组相机的信息计算归一化参数
-    主要帮助设置一个适当的场景坐标系
-    使得相机捕捉的场景可以在一个统一且优化的空间尺度中进行处理
     :return
             translate --> translation vector
             radius --> normalized radius
     """
 
     def get_center_and_diag(cam_centers):
-        """
-        接收一组相机中心点坐标，用于计算 场景的中心 和 对角线 长度
-        """
         cam_centers = np.hstack(cam_centers)
         avg_cam_center = np.mean(cam_centers, axis=1, keepdims=True)
         center = avg_cam_center

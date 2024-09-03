@@ -2,7 +2,7 @@ from scene.colmap_loader import read_extrinsics_text, read_intrinsics_text, qvec
 from scene.colmap_loader import read_extrinsics_binary, read_intrinsics_binary
 from scene.colmap_loader import read_points3D_binary, read_points3D_text
 from scene.hyper_loader import format_hyper_data, Load_hyper_data
-from scene.geometry import focal2fov, getNerfppNorm, getWorld2View2
+from scene.geometric import focal2fov, getNerfppNorm, getWorld2View2
 
 import matplotlib.pyplot as plt
 from typing import NamedTuple
@@ -49,17 +49,6 @@ class SceneInfo(NamedTuple):
 
 # READ COLMAP PROJECT
 def readColmapSceneInfo(path, images, eval, llffhold=8):
-    """
-    取并处理COLMAP生成的3D重建场景数据, 包括相机参数、图像信息和点云数据。函数详细处理了数据的读取、排序和分类，并进行了一些基础的数据转换
-    :return：
-        scene_info：一个封装了场景信息的 SceneInfo 对象，包含以下主要属性：
-        point_cloud：点云数据，从PLY文件中读取。
-        train_cameras 和 test_cameras：训练和测试用的相机数据。
-        video_cameras：通常与训练相机相同，用于视频渲染或其他视觉任务。
-        maxtime：场景的时间范围，这里默认设置为0。
-        nerf_normalization：场景归一化的参数。
-        ply_path：指向点云PLY文件的路径。
-    """
 
     # get extrinsic and intrinsic from path
     try:

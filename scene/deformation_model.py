@@ -1,6 +1,8 @@
-import torch
 from torch import nn
+
 import pytorch_lightning as pl
+import torch
+
 
 class TimeAwareEncoder(nn.Module):
 

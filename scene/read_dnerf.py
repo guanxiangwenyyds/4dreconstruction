@@ -1,6 +1,6 @@
 import os
 from PIL import Image
-from scene.geometry import getWorld2View2, focal2fov, fov2focal
+from scene.geometric import getWorld2View2, focal2fov, fov2focal
 
 import numpy as np
 import torch
