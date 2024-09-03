@@ -64,64 +64,83 @@ class PipelineParams(ParamGroup):
 
 class DnerfParams(ParamGroup):
     def __init__(self, parser):
+
         self.dataset = 'mutant'
         self.identifier = '001'
+
+        # parameters for deformation model
         self.depth = 3
         self.common_width = 128
+        self.deformation_lr = 0.001
+
+        # parameters for gaussian point group
         self.max_points = 50000
-        self.pe_t = True
+        self.pe_t = True            # positional encoding
         self.pe_xyz = True
-        self.only_xyz_t = True
-        self.if_diff_lr = None
+        self.only_xyz_t = True      # if False, all attributes of gaussian(opacity,color,etc)
+                                    # will be used as feature input to deformation model.
+        self.if_diff_lr = True
         self.feature_lr = 0.0025
         self.opacity_lr = 0.05
         self.scaling_lr = 0.005
         self.rotation_lr = 0.001
         self.xyz_lr = 0.001
-        self.num_epoch = 250
+
+        # parameters for training
+        self.num_epoch = 250   # total number of epochs
         self.num_epoch_4_init = 20
-        self.densification_from_iteration = 1500
+        self.densification_from_iteration = 1500  # Each epoch has 150 iterations(150 images in train set).
         self.densification_till_iteration = 15000
-        self.densification_inter_iteration = 300
-        self.deformation_lr = 0.001
+        self.densification_inter_iteration = 300  # densification interval
+
         super().__init__(parser, "Dnerf Parameters")
 
 
 class PanopticParams(ParamGroup):
     def __init__(self, parser):
+
         self.dataset = 'basketball'
         self.identifier = '001'
-        self.max_points = 100000
+
+        # parameters for deformation model
+        self.depth = 3
+        self.common_width = 256
+
+        # parameters for gaussian point group
         self.pe_t = True
         self.pe_xyz = True
         self.only_xyz_t = True
         self.if_diff_lr = None
-        self.depth = 3
-        self.common_width = 256
-        self.densification_from_epoch = 1
-        self.densification_till_epoch = 10
-        self.densification_inter_iteration = 30
-        self.gaussian_learning_till = 200
+
+        # parameters for training
         self.skip_init_gaussian = None
-        self.num_epoch_4_init = 500
-        self.densification_from_epoch_in_coarse = 0
-        self.densification_till_epoch_in_coarse = 0
+        self.num_epoch_4_init = 500  # number of epochs for initial gaussian training
         self.gaussian_lr_scheduler = 40
         self.gaussian_lr_init = 0.001
         self.gaussian_lr = 0.0001
         self.fix_gaussian = None
         self.train_deformation_model = True
-        self.num_epoch_4_deformation = 3
         self.deformation_lr_scheduler = 1
         self.deformation_lr = 0.00016
+        self.num_epoch_4_deformation = 3  # number of epochs for deformation training
+        # weights for loss
         self.w_l1 = 1.0
         self.w_rg = 0.0
         self.w_ssim = 0.0
         self.w_mse = 0.0
+        # We found that using densification on this dataset does not get improvement
+        # but increases the time significantly, so we don't use by default.
+        self.densification_inter_iteration = 30
+        self.densification_from_epoch_in_coarse = 0
+        self.densification_till_epoch_in_coarse = 0
+        self.max_points = 200000
+
+        # parameters for evaluation
         self.coarse_model = None
         self.test_or_train = 'test'
+        # render image
         self.start_frame = 0
         self.num_frames = 150
         self.intervals_frame = 1
-        self.cam_index = 0
+        self.cam_index = 0  # There are 4 diff cameras' view in test set
         super().__init__(parser, "Panoptic Parameters")
