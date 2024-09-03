@@ -5,6 +5,7 @@ from arguments import ModelParams, PipelineParams, PanopticParams
 from gaussian_renderer import render
 from loss import l1_loss, compute_ssim, compute_psnr2
 from scene.dataset import Delta_v2
+from animation_synthesis import animation_synthesis
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -100,13 +101,16 @@ def main():
                 if rendered_img_np.max() > 1.0:
                     rendered_img_np = rendered_img_np / rendered_img_np.max()  # 归一化到 0..1
 
-            save_path = f"output/result/{pan_params.dataset}{pan_params.identifier}/img/{pan_params.cam_index}/{i}.jpg"
+            save_path = f"output/result/{pan_params.dataset}{pan_params.identifier}/img/{pan_params.cam_index}/frame_{i:04d}.png"
             os.makedirs(os.path.dirname(save_path), exist_ok=True)
 
             plt.imsave(save_path, rendered_img_np)
             plt.close()
             i += 1
         print(f'Rendered images saved at: output/result/{pan_params.dataset}{pan_params.identifier}/img/{pan_params.cam_index}/')
+        img_path = f"output/result/{pan_params.dataset}{pan_params.identifier}/img/{pan_params.cam_index}/"
+        video_name = 'Video'
+        animation_synthesis(img_path, video_name)
 
     if evl:
 
