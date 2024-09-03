@@ -1,18 +1,7 @@
-#
-# Copyright (C) 2023, Inria
-# GRAPHDECO research group, https://team.inria.fr/graphdeco
-# All rights reserved.
-#
-# This software is free for non-commercial, research and evaluation use
-# under the terms of the LICENSE.md file.
-#
-# For inquiries contact  george.drettakis@inria.fr
-#
-
+import numpy as np
 import torch
 import math
-import numpy as np
-from typing import NamedTuple
+
 
 
 def getWorld2View2(R, t, translate=np.array([.0, .0, .0]), scale=1.0):
